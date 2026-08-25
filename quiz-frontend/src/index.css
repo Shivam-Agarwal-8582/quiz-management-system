@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   --primary: #6366f1;
   --secondary: #8b5cf6;
-  --background: #0f172a;
+  --background: #0b1120;
   --surface: #1e293b;
   --text: #f8fafc;
   --text-muted: #94a3b8;
   --success: #10b981;
   --error: #ef4444;
-  --border: #334155;
-  --radius: 16px;
+  --warning: #f59e0b;
+  --border: rgba(148, 163, 184, 0.16);
+  --radius: 18px;
 }
 
 * {
@@ -19,17 +20,25 @@
   padding: 0;
 }
 
+html {
+  scrollbar-color: var(--surface) var(--background);
+}
+
 body {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Outfit', system-ui, sans-serif;
   background-color: var(--background);
   color: var(--text);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
-  background-image: 
-    radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), 
-    radial-gradient(at 100% 0%, hsla(339,49%,30%,0.2) 0, transparent 50%);
+  background-image:
+    radial-gradient(ellipse at 10% -10%, hsla(243, 75%, 59%, 0.14) 0, transparent 45%),
+    radial-gradient(ellipse at 90% -10%, hsla(291, 66%, 58%, 0.12) 0, transparent 45%),
+    radial-gradient(ellipse at 50% 110%, hsla(190, 80%, 50%, 0.08) 0, transparent 45%);
   background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(99, 102, 241, 0.4);
 }

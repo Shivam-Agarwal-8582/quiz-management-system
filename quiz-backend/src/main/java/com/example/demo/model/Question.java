@@ -1,9 +1,11 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Entity
@@ -14,20 +16,31 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Question text is required")
+    @Column(nullable = false, unique = true, length = 500)
     private String text;
 
-    @jakarta.persistence.Column(name = "option_a")
+    @NotBlank(message = "Option A is required")
+    @Column(name = "option_a", nullable = false)
     private String optionA;
 
-    @jakarta.persistence.Column(name = "option_b")
+    @NotBlank(message = "Option B is required")
+    @Column(name = "option_b", nullable = false)
     private String optionB;
 
-    @jakarta.persistence.Column(name = "option_c")
+    @NotBlank(message = "Option C is required")
+    @Column(name = "option_c", nullable = false)
     private String optionC;
 
-    @jakarta.persistence.Column(name = "option_d")
+    @NotBlank(message = "Option D is required")
+    @Column(name = "option_d", nullable = false)
     private String optionD;
 
-    @jakarta.persistence.Column(name = "correct_answer")
+    @NotBlank(message = "Correct answer is required")
+    @Column(name = "correct_answer", nullable = false)
     private String correctAnswer;
+
+    @NotBlank(message = "Category is required")
+    @Column(nullable = false)
+    private String category;
 }
